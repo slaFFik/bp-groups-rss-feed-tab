@@ -8,7 +8,7 @@ class BPGRFT extends BP_Group_Extension{
     var $bpgrft_slug = 'rss-posts';
     var $bpgrft_item_position = 99;
 	var $enable_edit_item = false;
-	//var $enable_create_item = false;
+	var $enable_create_step = false; // @TODO: will set to true in future version
     
     function BPGRFT(){
         $this->bpgrft_name = __('RSS','bpgrft');
@@ -30,12 +30,14 @@ class BPGRFT extends BP_Group_Extension{
             return;
         }
         
-        $num_rss = groups_get_groupmeta($group_id,'bpgrft_rss_paged');
-        if(!empty($num_rss)){
-            $num_elem = $num_rss;
-        }else{
+        $num_elem = groups_get_groupmeta($group_id,'bpgrft_rss_paged');
+        if(empty($num_rss))
             $num_elem = 10;
-        }     
+        
+        $links_open = groups_get_groupmeta($group_id,'bpgrft_links_open');
+        if(empty($links_open))
+            $links_open = 'blank';
+        
         $rss = fetch_feed($rss_url);
         $maxitems = $rss->get_item_quantity(0);
         $pagin = $this->rss_pagination($num_elem,$maxitems);
@@ -55,7 +57,7 @@ class BPGRFT extends BP_Group_Extension{
                 // Loop through each feed item and display each item as a hyperlink.
                 foreach ( $rss_items as $item ) : ?>
                 <li>
-                    <a href='<?php echo $item->get_permalink(); ?>'>
+                    <a <?php echo ($links_open == 'blank')?'target="_blank"':''; ?> href='<?php echo $item->get_permalink(); ?>'>
                     <h4><?php echo $item->get_title(); ?></h4>
                     </a>
                     <span><?php echo $item->get_date('d M Y');?></span>
@@ -96,19 +98,21 @@ class BPGRFT extends BP_Group_Extension{
         </label>
         
         <label>
-            <input id="links_open" type="radio" <?php checked($links_open, 'blank') ?> name="links_open" value="blank" /> <?php _e('Open links in new window', 'bpgrft')?><br />
+            <input id="links_open" type="radio" <?php checked($links_open, 'blank') ?> name="links_open" value="blank" /> <?php _e('Open links in a new window', 'bpgrft')?><br />
         </label>
         <label style="margin:0 0 20px 0;">
-            <input id="links_open" type="radio" <?php checked($links_open, 'current'); ?> name="links_open" value="current" /> <?php _e('Open links in current window', 'bpgrft')?>
+            <input id="links_open" type="radio" <?php checked($links_open, 'current'); ?> name="links_open" value="current" /> <?php _e('Open links in a current window', 'bpgrft')?>
         </label>
+        
+        <hr />
 <?php
     }
     
     function save_rss_url(){
         if(!empty($_POST['rss_url'])){
-            groups_update_groupmeta($_POST['group-id'],'bpgrft_rss_url',$_POST['rss_url']);
-            groups_update_groupmeta($_POST['group-id'],'bpgrft_rss_paged',$_POST['num_rss']);
-            groups_update_groupmeta($_POST['group-id'],'bpgrft_links_open',$_POST['links_open']);
+            groups_update_groupmeta($_POST['group-id'],'bpgrft_rss_url',    strip_tags(trim($_POST['rss_url'])));
+            groups_update_groupmeta($_POST['group-id'],'bpgrft_rss_paged',  strip_tags(trim($_POST['num_rss'])));
+            groups_update_groupmeta($_POST['group-id'],'bpgrft_links_open', $_POST['links_open']);
         }
         
     }
