@@ -15,6 +15,7 @@ add_action( 'bp_init', 'bpgrft_load' );
 function bpgrft_load(){
     if (!is_admin()){
         require ( dirname(__File__) . '/bpgrft-class.php');
+        load_plugin_textdomain( 'bpgrft', false, dirname( plugin_basename( __FILE__ ) ) . '/langs/' );
     }   
 }
 
