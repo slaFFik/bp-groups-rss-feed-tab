@@ -1,12 +1,15 @@
 <?php
 /*
-Plugin Name: BP Group RSS Feed Tab
+Plugin Name: BP Groups RSS Feed Tab
 Plugin URI: http://cosydale.com/
 Description: Give ability for group admins to display any external RSS feed into a dedicated group tab "RSS"
 Version: 1.0
 Author: slaFFik, Valant
 Author URI: http://cosydale.com/
 */
+
+// Exit if accessed directly
+if ( !defined( 'ABSPATH' ) ) exit;
 
 add_action( 'bp_init', 'bpgrft_load' );
 function bpgrft_load(){
