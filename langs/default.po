@@ -1,0 +1,50 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: BP Groups RSS Feed Tab\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-23 23:32+0200\n"
+"PO-Revision-Date: 2012-05-23 23:32+0200\n"
+"Last-Translator: slaFFik <slaffik@list.ru>\n"
+"Language-Team: slaFFik <slaffik@list.ru>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: W:\\_server\\home\\ovi\\ab\\wp-content\\plugins\\bp-groups-rss-feed-tab\n"
+"X-Poedit-SearchPath-0: W:\\_server\\home\\ovi\\ab\\wp-content\\plugins\\bp-groups-rss-feed-tab\n"
+
+#: W:\_server\home\ovi\ab\wp-content\plugins\bp-groups-rss-feed-tab/bpgrft-class.php:14
+#: W:\_server\home\ovi\ab\wp-content\plugins\bp-groups-rss-feed-tab/bpgrft-class.php:88
+msgid "RSS"
+msgstr ""
+
+#: W:\_server\home\ovi\ab\wp-content\plugins\bp-groups-rss-feed-tab/bpgrft-class.php:29
+msgid "Nothing to display"
+msgstr ""
+
+#: W:\_server\home\ovi\ab\wp-content\plugins\bp-groups-rss-feed-tab/bpgrft-class.php:50
+#: W:\_server\home\ovi\ab\wp-content\plugins\bp-groups-rss-feed-tab/bpgrft-class.php:70
+msgid "Prev"
+msgstr ""
+
+#: W:\_server\home\ovi\ab\wp-content\plugins\bp-groups-rss-feed-tab/bpgrft-class.php:51
+#: W:\_server\home\ovi\ab\wp-content\plugins\bp-groups-rss-feed-tab/bpgrft-class.php:71
+msgid "Next"
+msgstr ""
+
+#: W:\_server\home\ovi\ab\wp-content\plugins\bp-groups-rss-feed-tab/bpgrft-class.php:91
+msgid "URL"
+msgstr ""
+
+#: W:\_server\home\ovi\ab\wp-content\plugins\bp-groups-rss-feed-tab/bpgrft-class.php:96
+msgid "Posts per page"
+msgstr ""
+
+#: W:\_server\home\ovi\ab\wp-content\plugins\bp-groups-rss-feed-tab/bpgrft-class.php:101
+msgid "Open links in a new window"
+msgstr ""
+
+#: W:\_server\home\ovi\ab\wp-content\plugins\bp-groups-rss-feed-tab/bpgrft-class.php:104
+msgid "Open links in a current window"
+msgstr ""
+
