@@ -2,7 +2,7 @@
 /*
 Plugin Name: BP Groups RSS Feed Tab
 Plugin URI: http://cosydale.com/
-Description: Give ability for group admins to display any external RSS feed into a dedicated group tab "RSS"
+Description: Give ability for group admins to display any external RSS feed into a dedicated group tab "RSS".
 Version: 1.0
 Author: slaFFik, Valant
 Author URI: http://cosydale.com/
