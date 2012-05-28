@@ -11,6 +11,7 @@ Author URI: http://cosydale.com/
 // Exit if accessed directly
 if ( !defined( 'ABSPATH' ) ) exit;
 
+// Do the magic
 add_action( 'bp_init', 'bpgrft_load' );
 function bpgrft_load(){
     if (!is_admin()){
