@@ -19,6 +19,7 @@ function bpgrft_load(){
     }
 }
 
+// load scripts on appropriate pages
 add_action('wp_enqueue_scripts', 'bpgrft_css');
 function bpgrft_css(){
     if (is_admin()) return;
